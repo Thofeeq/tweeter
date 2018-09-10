@@ -1,0 +1,27 @@
+#nav-bar{
+  
+  position:fixed;
+  width: 100%;
+  /* border: 5px solid red; */
+  background-color: #00a087;
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+#nav-bar .logo{
+  /* border: 1px dotted blue; */
+  width:80px;
+  height:80px;
+  float:left;
+}
+
+
+#nav-bar .header{
+
+  /* border:1px solid black; */
+  font-size: 2em;
+  line-height: 2;
+  color: white;
+  float:left;
+  padding-left: 10px;
+}
