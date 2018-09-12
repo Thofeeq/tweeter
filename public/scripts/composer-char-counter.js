@@ -8,5 +8,5 @@ $(document).ready(function() {
       $(".counter").html(currentNum).css({color:"#244751"});
     }
   });
-});
+  });
 
