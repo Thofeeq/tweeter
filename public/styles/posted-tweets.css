@@ -84,7 +84,7 @@
 }
 /*border upon hover*/
 .hover-true-body-bord {
-  border-color: rgba(0, 0, 0, 0.651);
+  border-color:black!important;
 }
 /*avatar upon hover*/
 .hover-true-image{
@@ -93,7 +93,7 @@
 /*border of header upon hover*/
 .hover-true-bord{
   color:black;
-  border-color: rgba(0, 0, 0, 0.651);
+  border-color: rgb(0, 0, 0);
   background-color: rgb(218, 218, 218)!important;
 }
 

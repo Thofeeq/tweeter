@@ -88,13 +88,13 @@ $(document).ready(function() {
       $('.tweets').mouseenter(function(event){
         $(this).find(".icons").addClass("hover-true"); 
         $(this).find("header").addClass("hover-true-bord");
-        $(this).find(".tweets").addClass("hover-true-body-bord");
-        $(this).find(".tweets img").addClass("hover-true-image");
+        $(this).addClass("hover-true-body-bord");
+        $(this).find("img").addClass("hover-true-image");
       }).mouseleave(function(){
         $(this).find(".icons").removeClass("hover-true");
         $(this).find("header").removeClass("hover-true-bord")
-        $(this).find(".tweets").removeClass("hover-true-body-bord");
-        $(this).find( ".tweets img").removeClass("hover-true-image");
+        $(this).removeClass("hover-true-body-bord");
+        $(this).find( "img").removeClass("hover-true-image");
       });
     })
   }
