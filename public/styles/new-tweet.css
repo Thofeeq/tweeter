@@ -1,11 +1,13 @@
-.new-tweet {
+ /* This CSS file is responsible for styling the tweet form*/
+
+.new-tweet {                                              
   border: 1px solid grey;
   background-color: #eee;
   margin-left: 2em;
   margin-right: 2em;
   border-radius: 4px;
 }
-/* //////////////////////////////////////// */
+
 .new-tweet h2 {
   border-bottom: 1px solid black;
   margin: 10px 10px 10px 10px;  
@@ -21,9 +23,21 @@
   width:100%;
 }
 
+/*Keeping the character counter at the bottom corner*/
 .new-tweet .counter {
   float: right;
 }
+
+/*this ID and property is to show errors below the form dynamically[currently hidden]*/
+#error-empty {
+  display: none;
+}
+/*this ID and property is to show errors below the form dynamically[currently hidden]*/
+#error-tooLong{
+  display: none;
+}
+
+/*---------------------------------------------------------------*/
 
 .tweets{
   margin-top:1%;
@@ -46,7 +60,9 @@
   margin-top:20px;
   margin-bottom:20px;
   margin-left: 5px;
+  word-break: break-all;
 }
+
 .tweets img{
   display:flex;
   margin-left:5px;
@@ -62,12 +78,16 @@
   font-weight: bold;
   margin-left:5px;
   margin-top:5px;
+  width:50%;
   
 }
 .tweets header p{
   display:flex;
   margin-top:5px;
-  margin-left:56%;
+  width:35%;
+  justify-content: flex-end;
+  margin-top:10px;
+  margin-right:5px;
   
 }
 

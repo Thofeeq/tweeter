@@ -6,6 +6,7 @@
   background-color: #00a087;
   padding-right: 2em;
   padding-left: 2em;
+  z-index: 10;
 }
 
 #nav-bar .logo{
@@ -24,4 +25,25 @@
   color: white;
   float:left;
   padding-left: 10px;
+}
+
+.btn-cus{
+  margin-top:10px;  
+  background-color: #b0dad3;
+  color:#00a087;
+  border-color: #00a087!important;
+  float:right;
+}
+
+.btn-cus:hover{
+  background-color: #b0dad3;
+  color:black;
+  border-color: #00a087!important;
+  
+}
+
+.btn-cus:active:focus {
+  color: #ffffff!important; 
+  background-color: #00a087!important; 
+  border-color: #00a087 !important;
 }

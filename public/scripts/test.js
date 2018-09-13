@@ -33,7 +33,7 @@ function createTweetElement(tweetObj){
   <span class="glyphicon glyphicon-heart  " aria-hidden="true"></span> 
 </div>
   </footer>
-  `).addClass("tweets")                  
+  `).addClass("tweets");                  
   return newTweet;
 }
 
@@ -41,6 +41,6 @@ function createTweetElement(tweetObj){
 var $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
-
+console.log($tweet[0].innerHTML);
 $('.tweet-container').append($tweet);// to add it to the page so we can make sure it's got all the right elements, classes, etc
 });
