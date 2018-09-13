@@ -21,7 +21,6 @@ $(document).ready(function() {
   $( "form" ).on( "submit", function( event ) {
     //getting the text from the textbox
     var formValue =  $("#tweet-box").val();
-    console.log(formValue);
     //Prevent html form's post/action default
     event.preventDefault(); 
     //Error handling - If length of chars is 0 or more than 140, or Null, then show/hide the respective errors.
@@ -40,6 +39,7 @@ $(document).ready(function() {
         (loadTweets());
         //Empty the text in form once the post has been completed.
         $("#tweet-box").val("");
+        $("#counter-id").html("140");
         });
       }
     });
@@ -79,15 +79,15 @@ $(document).ready(function() {
 
   //This will render tweets given a list of user objects
   function renderTweets(tweets) {
-    // loops through tweets
+    // loops through the tweets
     tweets.forEach(function(tweet){
       //render the html for each tweet
       var $tweet = createTweetElement(tweet);
-      //prepend the rended html to the container
-      $('.tweet-container').prepend($tweet);
+      //prepend the rended html to the container so it appears on top
+      $(".tweet-container").prepend($tweet);
 
       //this takes of hover animation ( used JQuery event instead of CSS pseudo class)
-      $('.tweets').mouseenter(function(event){
+      $(".tweets").mouseenter(function(event){
         $(this).find(".icons").addClass("hover-true"); 
         $(this).find("header").addClass("hover-true-bord");
         $(this).addClass("hover-true-body-bord");
