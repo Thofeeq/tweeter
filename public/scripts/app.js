@@ -32,8 +32,7 @@ $(document).ready(function() {
       $("#error-tooLong").hide();
       } else {
       $("#error-empty").hide();
-      $("#error-tooLong").h
-      ide();
+      $("#error-tooLong").hide();
       $.post( "/tweets/", $( this ).serialize(),function(){
         //Loading the tweets once the tweet has been posted
         (loadTweets());
