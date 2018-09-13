@@ -2,6 +2,10 @@
 
 Tweeter is a simple, single-page Twitter clone. Posts and updates "tweets" without page refresh using AJAX. HTML,CSS[some Bootsrap], jQuery was used for frontend. Express, Node and Mongo was used for backend. 
 
+
+![Tweets + Textbox + Compose button](https://github.com/Thofeeq/tweeter/blob/master/docs/tweet-image-1.png?raw=true)
+![](https://github.com/Thofeeq/tweeter/blob/master/docs/tweet-image-2.png?raw=true)
+![](https://github.com/Thofeeq/tweeter/blob/master/docs/tweet-image-3.png?raw=true)
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
