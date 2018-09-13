@@ -19,11 +19,13 @@ $(document).ready(function() {
 
   //This event handler takes care of posting the tweet
   $( "form" ).on( "submit", function( event ) {
-    //since serialize contains "text=", slice string to get the actual input(tweet) 
-    var formValue =  $(this).serialize().slice(5);
+    //getting the text from the textbox
+    var formValue =  $("#tweet-box").val();
+    console.log(formValue);
     //Prevent html form's post/action default
     event.preventDefault(); 
     //Error handling - If length of chars is 0 or more than 140, or Null, then show/hide the respective errors.
+    
     if(formValue.length > 140) {
       $("#error-tooLong").show();
       $("#error-empty").hide();
