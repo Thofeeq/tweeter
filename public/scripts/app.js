@@ -53,7 +53,7 @@ $(document).ready(function() {
     });
   }
 
-  
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',hour:'2-digit', minute:'2-digit' };
   //This function takes data from the DB and parses it into HTML responsible for a single tweet
   function createTweetElement(tweetObj){
     let newTweet = $("<article>").html(
@@ -65,7 +65,7 @@ $(document).ready(function() {
     <p>${$("<p>").text(tweetObj.content.text).html()}</p>
     <hr>
     <footer>
-      <p>${$("<p>").text(Date(tweetObj.createdAt)).html()}</p>
+      <p>${$("<p>").text( new Date(tweetObj.created_at).toLocaleDateString("en-US",options)).html()}</p>
       <div class="icons">
         <span class="glyphicon glyphicon-flag  " aria-hidden="true"></span>
         <span class="glyphicon glyphicon-retweet " aria-hidden="true"></span>
