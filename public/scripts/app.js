@@ -64,9 +64,19 @@ $(document).ready(function() {
       const dayInMilli = 24 * hourInMilli;
       const monthInMilli = 30 * dayInMilli;
       if(Math.floor(milliseconds) <= minuteInMilli){
-        relativeTime = "moments ago";
+        if(milliseconds < 44000) {
+          relativeTime = "moments ago";
+        }else {
+          relativeTime = Math.floor(milliseconds/secondInMilli) + " seconds ago"; 
+        } 
       } else if(Math.floor(milliseconds) < (hourInMilli)){
-        relativeTime = Math.floor(milliseconds/minuteInMilli) + " minutes ago" 
+          if(milliseconds < (minuteInMilli * 2)){
+            relativeTime = Math.floor(milliseconds/minuteInMilli) + " minute ago"
+          }
+          else{
+            relativeTime = Math.floor(milliseconds/minuteInMilli) + " minutes ago"
+          }
+         
       } else if(Math.floor(milliseconds) < (dayInMilli)){
         if(milliseconds < (hourInMilli * 2 ) ){
           relativeTime = Math.floor(milliseconds/hourInMilli) + "  hour ago";
