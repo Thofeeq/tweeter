@@ -20,8 +20,10 @@ $(document).ready(function() {
   $( "form" ).on( "submit", function( event ) {
     //getting the text from the textbox
     var formValue =  $("#tweet-box").val();
+
     //Prevent html form's post/action default
     event.preventDefault(); 
+
     //Error handling - If length of chars is 0 or more than 140, or Null, then show/hide the respective errors.
     
     if(formValue.length > 140) {
@@ -52,7 +54,6 @@ $(document).ready(function() {
     });
   }
 
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',hour:'2-digit', minute:'2-digit' };
   //This function takes data from the DB and parses it into HTML responsible for a single tweet
   function createTweetElement(tweetObj){
     //helper function for relative time. 
