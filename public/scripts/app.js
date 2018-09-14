@@ -56,6 +56,38 @@ $(document).ready(function() {
   var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',hour:'2-digit', minute:'2-digit' };
   //This function takes data from the DB and parses it into HTML responsible for a single tweet
   function createTweetElement(tweetObj){
+
+    function getRelativeTime(milliseconds){
+      let relativeTime = "";
+      const secondInMilli = 1000;
+      const minuteInMilli = 60 * secondInMilli;
+      const hourInMilli = 60 * minuteInMilli;
+      const dayInMilli = 24 * hourInMilli;
+      const monthInMilli = 30 * dayInMilli;
+      if(Math.floor(milliseconds) <= minuteInMilli){
+        relativeTime = "moments ago";
+      } else if(Math.floor(milliseconds) < (hourInMilli)){
+        relativeTime = Math.floor(milliseconds/minuteInMilli) + " minutes ago" 
+      } else if(Math.floor(milliseconds) < (dayInMilli)){
+        if(milliseconds < (hourInMilli * 2 ) ){
+          relativeTime = Math.floor(milliseconds/hourInMilli) + "  hour ago";
+        } else{
+          relativeTime = Math.floor(milliseconds/hourInMilli) + " hours ago";
+        }  
+      } else if(Math.floor(milliseconds) < (monthInMilli)){
+        if(milliseconds < (dayInMilli * 2 )) {
+          relativeTime = Math.floor(milliseconds/dayInMilli) + "day ago"; 
+        }
+        else {
+          relativeTime = Math.floor(milliseconds/dayInMilli) +" days ago"; 
+        }
+      } else {
+        return new Date(milliseconds);
+      }
+      return relativeTime;
+    }
+    
+  
     let newTweet = $("<article>").html(
     `<header>
       <img src="${$("<p>").text(tweetObj.user.avatars.small).html()}">
@@ -65,7 +97,7 @@ $(document).ready(function() {
     <p>${$("<p>").text(tweetObj.content.text).html()}</p>
     <hr>
     <footer>
-      <p>${$("<p>").text( new Date(tweetObj.created_at).toLocaleDateString("en-US",options)).html()}</p>
+      <p>${$("<p>").text(getRelativeTime(new Date() - new Date(tweetObj.created_at))).html()}</p>
       <div class="icons">
         <span class="glyphicon glyphicon-flag  " aria-hidden="true"></span>
         <span class="glyphicon glyphicon-retweet " aria-hidden="true"></span>
