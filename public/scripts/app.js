@@ -86,18 +86,19 @@ $(document).ready(function() {
         }  
       } else if(Math.floor(milliseconds) < (monthInMilli)){
         if(milliseconds < (dayInMilli * 2 )) {
-          relativeTime = Math.floor(milliseconds/dayInMilli) + "day ago"; 
+          relativeTime = Math.floor(milliseconds/dayInMilli) + " day ago"; 
         }
         else {
           relativeTime = Math.floor(milliseconds/dayInMilli) +" days ago"; 
         }
       } else {
+        //if over a month, just display the actual time stamp
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(milliseconds).toLocaleDateString("en-US",options);
       }
       return relativeTime;
     }
-    
+  
     let newTweet = $("<article>").html(
     `<header>
       <img src="${$("<p>").text(tweetObj.user.avatars.small).html()}">
