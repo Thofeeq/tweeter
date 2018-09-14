@@ -1,7 +1,6 @@
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
 $(document).ready(function() {
@@ -56,7 +55,7 @@ $(document).ready(function() {
   var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',hour:'2-digit', minute:'2-digit' };
   //This function takes data from the DB and parses it into HTML responsible for a single tweet
   function createTweetElement(tweetObj){
-
+    //helper function for relative time. 
     function getRelativeTime(milliseconds){
       let relativeTime = "";
       const secondInMilli = 1000;
@@ -82,12 +81,12 @@ $(document).ready(function() {
           relativeTime = Math.floor(milliseconds/dayInMilli) +" days ago"; 
         }
       } else {
-        return new Date(milliseconds);
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(milliseconds).toLocaleDateString("en-US",options);
       }
       return relativeTime;
     }
     
-  
     let newTweet = $("<article>").html(
     `<header>
       <img src="${$("<p>").text(tweetObj.user.avatars.small).html()}">
