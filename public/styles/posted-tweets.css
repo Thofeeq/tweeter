@@ -73,6 +73,11 @@
 
 .icons{
   display:none;
+
+ 
+}
+.icons i{
+  padding:2px;
 }
 /*Classes responsible for hovering over tweet*/
 

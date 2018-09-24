@@ -110,9 +110,9 @@ $(document).ready(function() {
     <footer>
       <p>${$("<p>").text(getRelativeTime(new Date() - new Date(tweetObj.created_at))).html()}</p>
       <div class="icons">
-        <span class="glyphicon glyphicon-flag  " aria-hidden="true"></span>
-        <span class="glyphicon glyphicon-retweet " aria-hidden="true"></span>
-        <span class="glyphicon glyphicon-heart  " aria-hidden="true"></span> 
+        <i class="fas fa-flag"></i>
+        <i class="far fa-heart"></i>
+        <i class="fas fa-retweet"></i>
       </div>
     </footer>
     `).addClass("tweets");   
